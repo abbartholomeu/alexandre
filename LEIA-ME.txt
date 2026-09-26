@@ -1,0 +1,30 @@
+SITE ALEXANDRE - Pinturas, Instalações e Manutenção
+===================================================
+
+Site 100% estático (HTML5 + CSS + JavaScript), sem backend.
+Para publicar, envie TODO o conteúdo desta pasta para a raiz da hospedagem
+(ex.: Hostinger, HostGator, Netlify, Vercel, GitHub Pages, Cloudflare Pages).
+O arquivo inicial é o index.html.
+
+Estrutura
+- index.html ............ página única com todas as seções
+- assets/css/style.css .. estilos (tema claro/escuro automático)
+- assets/js/main.js ..... interações (menu, filtros, animações, formulário -> WhatsApp)
+- assets/img/ ........... imagem do Alexandre, logomarca em SVG (logo.svg e logo-mark.svg) e imagem de compartilhamento (og-image.jpg)
+- favicon.svg, site.webmanifest, robots.txt
+
+Contato configurado
+- WhatsApp/Telefone: (16) 98155-6203 -> https://wa.me/5516981556203
+  Para trocar o número, substitua 5516981556203 e (16) 98155-6203 no index.html
+  e a constante WA_NUMBER no assets/js/main.js.
+
+Bibliotecas (carregadas por CDN, opcionais)
+- GSAP + ScrollTrigger (animações ao rolar)
+- Lenis (rolagem suave)
+- Google Fonts (Montserrat e Poppins)
+Se a CDN falhar, o site continua funcionando normalmente.
+
+O formulário de orçamento não envia e-mail: ele abre o WhatsApp do Alexandre com a mensagem pronta.
+
+Sugestões após publicar: incluir endereço/cidade de atendimento, e-mail, Instagram,
+fotos de serviços realizados e depoimentos reais de clientes.
