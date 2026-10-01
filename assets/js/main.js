@@ -149,6 +149,54 @@
     setTimeout(() => wa.classList.remove('show-tip'), 9000);
   }
 
+  /* ---------- Vídeos: sem som, em loop, com som opcional ---------- */
+  const players = $$('[data-vplayer]').map((fig) => ({ fig, video: $('video', fig), userPaused: false }));
+  const setSound = (p, on) => {
+    p.video.muted = !on;
+    const btn = $('[data-act="sound"]', p.fig);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.setAttribute('aria-label', on ? 'Desativar som' : 'Ativar som');
+    const label = $('.vbtn__label', btn);
+    if (label) label.textContent = on ? 'Som ativado' : 'Ativar som';
+  };
+  const setPaused = (p, paused) => {
+    p.fig.classList.toggle('is-paused', paused);
+    $('[data-act="play"]', p.fig).setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+  };
+  const tryPlay = (p) => p.video.play().catch(() => setPaused(p, true));
+  players.forEach((p) => {
+    const { video, fig } = p;
+    video.muted = true; // exigido pelos navegadores para autoplay
+    setSound(p, false);
+    video.addEventListener('play', () => setPaused(p, false));
+    video.addEventListener('pause', () => setPaused(p, true));
+    if (reduceMotion) { video.removeAttribute('autoplay'); video.pause(); p.userPaused = true; setPaused(p, true); }
+
+    $('[data-act="sound"]', fig).addEventListener('click', () => {
+      const on = video.muted;
+      if (on) players.filter((o) => o !== p).forEach((o) => setSound(o, false)); // só um vídeo com som por vez
+      setSound(p, on);
+      if (on) {
+        if (video.paused) { p.userPaused = false; tryPlay(p); }
+        video.currentTime = 0; // começa do início ao ligar o som
+      }
+    });
+    $('[data-act="play"]', fig).addEventListener('click', () => {
+      if (video.paused) { p.userPaused = false; tryPlay(p); }
+      else { p.userPaused = true; video.pause(); }
+    });
+  });
+  // Pausa vídeos fora da tela (economia de bateria/dados) e retoma ao voltar
+  if (players.length && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries) => entries.forEach((en) => {
+      const p = players.find((x) => x.fig === en.target);
+      if (!p) return;
+      if (en.isIntersecting) { if (!p.userPaused) tryPlay(p); }
+      else if (!p.video.paused) p.video.pause();
+    }), { threshold: 0.25 });
+    players.forEach((p) => vio.observe(p.fig));
+  }
+
   /* ---------- Ano no rodapé ---------- */
   const ano = $('#ano');
   if (ano) ano.textContent = new Date().getFullYear();

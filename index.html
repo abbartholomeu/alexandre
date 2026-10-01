@@ -6,8 +6,8 @@
   <title>Alexandre Marido de Aluguel | Pinturas, Instalações e Manutenção</title>
   <meta name="description" content="Alexandre Marido de Aluguel: pinturas, instalações elétricas e hidráulicas, montagem de móveis e pequenos reparos. Orçamento sem compromisso pelo WhatsApp (16) 98155-6203.">
   <meta name="theme-color" content="#0b1f15">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/alexandre.jpg">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
   <meta property="og:type" content="website">
@@ -31,6 +31,7 @@
     "description": "Pinturas, Instalações e Manutenção residencial e comercial.",
     "telephone": "+55-16-98155-6203",
     "image": "assets/img/alexandre.jpg",
+    "logo": "assets/img/logo-alexandre.webp",
     "priceRange": "Orçamento sem compromisso",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -74,19 +75,10 @@
       <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
       <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
       <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
-      <symbol id="logo-mark" viewBox="0 0 120 100">
-        <path d="M34 62V18l10-6v50z" fill="#1d2a24"/>
-        <path d="M44 62V12l12 6v44z" fill="#34463c"/>
-        <path d="M38 22h3M38 30h3M38 38h3M38 46h3M48 22h5M48 30h5M48 38h5M48 46h5" stroke="#9fb3a7" stroke-width="2"/>
-        <path d="M6 88 58 18l52 70H92L58 42 36 72h36l-8 12H26l-6 4z" fill="#27b43c"/>
-        <path d="M58 18 110 88H92L58 42z" fill="#5be05e" opacity=".55"/>
-        <g transform="rotate(35 92 20)">
-          <rect x="87" y="-6" width="9" height="20" rx="3" fill="#1d2a24"/>
-          <rect x="85" y="13" width="13" height="6" rx="1.5" fill="#c9d3cd"/>
-          <path d="M85 19h13v10c0 4-3 6-6.5 6S85 33 85 29z" fill="#3fce4a"/>
-        </g>
-        <path d="M84 36c10 8 14 20 8 34" fill="none" stroke="#3fce4a" stroke-width="5" stroke-linecap="round"/>
-      </symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+      <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3v16H7zM14 4h3v16h-3z" fill="currentColor"/></symbol>
     </defs>
   </svg>
 
@@ -95,11 +87,7 @@
   <header class="header" id="topo">
     <div class="container header__inner">
       <a href="#topo" class="brand" aria-label="Alexandre - página inicial">
-        <svg class="brand__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
-        <span class="brand__text">
-          <strong>ALEXANDRE</strong>
-          <small>Pinturas, Instalações e Manutenção</small>
-        </span>
+        <img class="brand__logo" src="assets/img/logo-alexandre-sm.webp" width="360" height="234" alt="Alexandre - Pinturas, Instalações e Manutenção">
       </a>
 
       <nav class="nav" id="nav" aria-label="Menu principal">
@@ -301,16 +289,33 @@
       </div>
     </section>
 
-    <!-- NÚMEROS / FAIXA CTA -->
-    <section class="band">
+    <!-- VÍDEO / FAIXA CTA -->
+    <section class="band band--video" aria-label="Vídeo de apresentação">
       <div class="container band__inner">
-        <div class="band__copy reveal">
-          <h2>Faça seu orçamento <span>sem compromisso</span></h2>
-          <p>Mande uma foto ou descreva o serviço pelo WhatsApp e receba o orçamento rapidinho.</p>
+        <div class="band__copy">
+          <h2 class="reveal">Faça seu orçamento <span>sem compromisso</span></h2>
+          <p class="reveal">Mande uma foto ou descreva o serviço pelo WhatsApp e receba o orçamento rapidinho. Pinturas, instalações e manutenção com quem entende do assunto.</p>
+          <a class="btn btn--light btn--lg reveal" href="https://wa.me/5516981556203?text=Ol%C3%A1%2C%20Alexandre!%20Gostaria%20de%20um%20or%C3%A7amento%20sem%20compromisso." target="_blank" rel="noopener" data-wa>
+            <svg class="ico"><use href="#i-whatsapp"/></svg> Chamar no WhatsApp
+          </a>
         </div>
-        <a class="btn btn--light btn--lg reveal" href="https://wa.me/5516981556203?text=Ol%C3%A1%2C%20Alexandre!%20Gostaria%20de%20um%20or%C3%A7amento%20sem%20compromisso." target="_blank" rel="noopener" data-wa>
-          <svg class="ico"><use href="#i-whatsapp"/></svg> Chamar no WhatsApp
-        </a>
+        <div class="band__media reveal">
+          <figure class="vplayer vplayer--wide" data-vplayer>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/apresentacao-alexandre-poster.jpg" width="848" height="478" aria-label="Vídeo de apresentação do Alexandre Pinturas, Instalações e Manutenção">
+              <source src="assets/video/apresentacao-alexandre.webm" type="video/webm">
+              <source src="assets/video/apresentacao-alexandre.mp4" type="video/mp4">
+            </video>
+            <div class="vplayer__controls">
+              <button class="vbtn vbtn--sound" type="button" data-act="sound" aria-pressed="false">
+                <svg class="ico ico--mute"><use href="#i-mute"/></svg><svg class="ico ico--vol"><use href="#i-volume"/></svg>
+                <span class="vbtn__label">Ativar som</span>
+              </button>
+              <button class="vbtn vbtn--play" type="button" data-act="play" aria-label="Pausar vídeo">
+                <svg class="ico ico--pause"><use href="#i-pause"/></svg><svg class="ico ico--play"><use href="#i-play"/></svg>
+              </button>
+            </div>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -355,10 +360,24 @@
       <div class="container about__inner">
         <div class="about__media reveal">
           <div class="about__frame">
-            <img src="assets/img/alexandre.webp" width="637" height="636" loading="lazy" alt="Alexandre com uniforme verde e rolo de pintura">
+            <figure class="vplayer vplayer--square" data-vplayer>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/video/logomarca-alexandre-poster.jpg" width="448" height="368" aria-label="Vídeo animado da logomarca do Alexandre">
+              <source src="assets/video/logomarca-alexandre.webm" type="video/webm">
+              <source src="assets/video/logomarca-alexandre.mp4" type="video/mp4">
+            </video>
+            <div class="vplayer__controls">
+              <button class="vbtn vbtn--sound" type="button" data-act="sound" aria-pressed="false">
+                <svg class="ico ico--mute"><use href="#i-mute"/></svg><svg class="ico ico--vol"><use href="#i-volume"/></svg>
+                <span class="vbtn__label">Ativar som</span>
+              </button>
+              <button class="vbtn vbtn--play" type="button" data-act="play" aria-label="Pausar vídeo">
+                <svg class="ico ico--pause"><use href="#i-pause"/></svg><svg class="ico ico--play"><use href="#i-play"/></svg>
+              </button>
+            </div>
+          </figure>
           </div>
           <div class="about__badge">
-            <svg aria-hidden="true"><use href="#logo-mark"/></svg>
+            <img src="assets/img/alexandre.webp" width="637" height="636" loading="lazy" alt="Alexandre com uniforme verde e rolo de pintura">
           </div>
         </div>
         <div class="about__copy">
@@ -484,8 +503,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#topo" class="brand brand--footer" aria-label="Voltar ao topo">
-          <svg class="brand__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
-          <span class="brand__text"><strong>ALEXANDRE</strong><small>Pinturas, Instalações e Manutenção</small></span>
+          <img class="brand__logo brand__logo--footer" src="assets/img/logo-alexandre.webp" width="900" height="586" loading="lazy" alt="Alexandre - Pinturas, Instalações e Manutenção">
         </a>
         <p>Marido de aluguel para sua casa ou empresa. Qualidade, pontualidade e preço justo.</p>
       </div>
