@@ -416,7 +416,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .hero__title .hl { display: block; }
 :root[data-theme="dark"] :is(.card__link, .services__more a, .qa__body a, .eyebrow) { color: var(--green-400); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.card__link, .services__more a, .qa__body a, .eyebrow) { color: var(--green-400); } }
-@media (max-width: 900px) { .float-card--b { right: auto; left: 8px; top: 4%; } }
+/* Celular/tablet: selos saem de cima da imagem e ficam logo abaixo, sem cobrir o rosto */
+@media (max-width: 900px) {
+  .tilt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tilt img { grid-column: 1 / -1; }
+  .float-card, .float-card--a, .float-card--b { position: static; transform: none; animation: none; }
+  .float-card--b { grid-row: 2; grid-column: 2; }
+}
 
 /* ---------- Logomarca (imagem) ---------- */
 .brand__logo { height: 64px; width: auto; filter: drop-shadow(0 2px 6px rgb(0 0 0 / .18)); }
